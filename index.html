@@ -438,7 +438,7 @@ applyUser();draw();
     console.warn('ClassSync pilot: configure classsync-config.js before enabling live services.');
     return;
   }
-  const client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+  const client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'pkce'}});
   window.classSyncSupabase=client;
   let currentRoom=null, pollHandle=null;
   const $id=id=>document.getElementById(id);
