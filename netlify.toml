@@ -6,3 +6,9 @@
   from = "/api/ai"
   to = "/.netlify/functions/ai"
   status = 200
+
+# Any unknown path (including OAuth callback URLs with tokens) must load the app.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
